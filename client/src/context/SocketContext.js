@@ -10,7 +10,7 @@ export function SocketProvider({ children, accountId, deviceName }) {
 
   useEffect(() => {
     if (!accountId) return;
-    const socket = io("https://syncwave-server-live.onrender.com/", { transports: ["websocket"] });
+    const socket = io("https://syncwave-server-live.onrender.com", { transports: ["websocket"] });
     socketRef.current = socket;
 
     socket.on("connect", () => {
